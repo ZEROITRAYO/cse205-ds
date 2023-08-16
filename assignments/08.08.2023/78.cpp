@@ -5,7 +5,7 @@ public:
             ans.push_back(temp);
             return;
         }
-        else
+        
             temp.push_back(nums[i]);
             solve(nums,ans,temp,i+1);
             temp.pop_back();
