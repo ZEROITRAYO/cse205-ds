@@ -1,6 +1,6 @@
 class Solution {
 private:
-    void backTrack(vector<vector<int>>& ans, vector<int>& nums, vector<int>& temp, int index) {
+    void solve(vector<vector<int>>& ans, vector<int>& nums, vector<int>& temp, int index) {
         ans.push_back(temp);  
 
         for (int i = index; i < nums.size(); i++) {
@@ -9,7 +9,7 @@ private:
             }
                
             temp.push_back(nums[i]);  
-            backTrack(ans, nums, temp, i + 1);
+            solve(ans, nums, temp, i + 1);
             temp.pop_back();  
         }
     }
@@ -20,7 +20,7 @@ public:
         vector<vector<int>> ans;
         vector<int> temp; 
 
-        backTrack(ans, nums, temp, 0);
+        solve(ans, nums, temp, 0);
         return ans;
     }
 };
